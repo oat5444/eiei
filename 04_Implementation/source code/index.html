@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <button id="themeToggle" class="theme-btn" title="Switch Theme">
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <div class="container">
+        <header>
+            <h1>Password Generator</h1>
+            <p>Generate secure passwords with just one click.</p>
+        </header>
+
+        <div class="card">
+            <div class="result-container">
+                <input type="text" id="passwordDisplay" placeholder="Click generate" readonly>
+                <button id="copyBtn" title="Copy">
+                    <i class="far fa-copy"></i>
+                </button>
+            </div>
+
+            <div class="strength-container">
+                <div class="section-label">
+                    <span>Strength</span>
+                    <span id="strengthText">Weak</span>
+                </div>
+                <div class="strength-bar-bg">
+                    <div id="strengthBar" class="strength-bar"></div>
+                </div>
+            </div>
+
+            <div class="slider-container">
+                <div class="section-label">
+                    <label>Password Length</label>
+                    <span id="lengthValue">16</span>
+                </div>
+                <input type="range" id="lengthSlider" min="4" max="32" value="16">
+            </div>
+
+            <div class="settings-list">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="uppercase" checked>
+                    <label for="uppercase">Include Uppercase (A-Z)</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="lowercase" checked>
+                    <label for="lowercase">Include Lowercase (a-z)</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="numbers" checked>
+                    <label for="numbers">Include Numbers (0-9)</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="symbols" checked>
+                    <label for="symbols">Include Symbols (!@#$)</label>
+                </div>
+            </div>
+
+            <button id="generateBtn">
+                <i class="fas fa-sync-alt"></i> Generate Password
+            </button>
+
+            <div class="history-section">
+                <div class="history-label">Last 3 Passwords</div>
+                <ul id="historyList">
+                    <li class="empty-history">No history yet</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">Copied to clipboard!</div>
+    <script src="script.js"></script>
+</body>
+</html>
